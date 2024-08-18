@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Tambah Tugas
+{% endblock %}
+
+{% block body %}
+<form action="/update/{{tugas.id}}" method="POST">
+
+    <label for="name">Judul Tugas : </label>
+    <input type="text" name="name" placeholder="Judul" class="form-control" value="{{tugas.name}}">
+
+    <label for="deskripsi">Deskripsi Tugas : </label>
+    <textarea name="deskripsi" placeholder="Deskripsi" class="form-control" rows="10">{{tugas.deskripsi}}</textarea>
+
+    <br />
+
+    <div class="d-flex btn btn-group">
+        <button class="btn btn-primary" type="submit">Tambah</button>
+        <a href="{{url_for('index')}}" class="btn btn-secondary">Kembali</a>
+    </div>
+    
+</form>
+
+{% endblock %}
